@@ -1,11 +1,15 @@
 {
-  "dependencies": {
-  },
   "scripts": {
-    "prepare": "husky"
+    "prepare": "husky",
+    "build": "npx postcss ./src/index.css -o ./src/index.min.css",
+    "postbuild": "npx prettier --write src/*.html"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.18",
+    "cssnano": "^6.1.0",
     "husky": "^9.0.11",
+    "postcss": "^8.4.36",
+    "postcss-cli": "^11.0.0",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.12",
     "tailwindcss": "^3.4.1"
@@ -14,5 +18,5 @@
     "plugins": [
       "prettier-plugin-tailwindcss"
     ]
-  },
+  }
 }
